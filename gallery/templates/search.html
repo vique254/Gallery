@@ -2,17 +2,25 @@
 {% block content %}
 <div class="container">
     <div class="row">
-        {% if categories %}
-        <h2>Found {{categories|length}} of searched term {{message}}</h2>
+        {% if category %}
+
+        <h2>Found {{category|length}} of searched term {{message}}</h2>
         {% else %}
         <h2>Found 0 categories for the search term  {{message}}</h2>
         {% endif %}
     </div>
     <div class="row">
-        {% if categories %}
-        {% for category in categories %}
+        {% if category %}
+        {% for category in category %}
         <div class="col-sm-6 col-md-3">
-            <h1>{{category.name}}</h1>
+            <h1>{{category.image_name}}</h1>
+        </div>
+        <div>
+            <img src="{{category.image.url}}" alt="image">
+        </div>
+        <div>
+                <h1>{{category.image_description}}</h1>
+                <h1>{{category.image_location}}</h1>
         </div>
         {% endfor %}
         {% endif %}
