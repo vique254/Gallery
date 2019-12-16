@@ -6,7 +6,7 @@
   <meta charset="utf-8">
 
   {% if title %}
-  <title>Vique's  - {{title}}</title>
+  <title>Vique's  - {{name}}</title>
   {% else %}
     <title>Gallery </title>
   {% endif %}
@@ -19,7 +19,7 @@
 </head>
 <body>
     {% include "navbar.html" %}
-    
+
     {% block content %} <h1 class='text-center'>Welcome to Vique's Gallery</h1> {%endblock%}
 
     {% block scripts %}

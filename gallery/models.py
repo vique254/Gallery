@@ -23,7 +23,7 @@ class   category(models.Model):
         
     @classmethod
     def search_by_name(cls,search_term):
-        gallery = cls.objects.filter(title__icontains=search_term)    
+        gallery = cls.objects.filter(name__icontains=search_term)    
     
     
 class Image(models.Model):
