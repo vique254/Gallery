@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import location,category,Image
-from django.http  import HttpResponse
+from django.http  import HttpResponse,Http404
+
 # Create your views her
 def main(request):
     images =Image.get_images()
@@ -17,3 +18,4 @@ def search_results(request):
     else:
         message = "You haven't searched for any term" 
         return render(request,'search.html',{"message":message})   
+    

@@ -1,23 +1,49 @@
 {%extends 'base.html'%}
-<h1>Welcome to My Gallery</h1>
 {{block.super}}
 {%block content%}
+
+<h1 class="text-center">Welcome to My Gallery</h1>
 {% for image in images  %}
 <div class="container">
-<div class="row">
-        <!-- displaying gallery categories -->
-        <div class="column">
+    <div class="row">
+        <div class="col-md-4">
+            <!-- displaying gallery categories -->
             <h2 class="text-center">{{image.image_name}}</h2>
         </div>
-</div>       
-    <div class="row">      
-        <!-- Display category  images-->
-        <div class="column">
-            <img  src="{{image.image.url}}" class="img-responsive" alt="Image" ><a href="{{image.image.url}}" class="bg-primary">Image link</a><br><br>
+        <div class="row">
+            <!-- Display category  images-->
+            <a href="{{image.image.url}}" style="color: white; font-size: 18px;"><strong>Image Link</strong> <br>
+            <a class="image" data-toggle="modal" data-target='#{{image.id}}'><img src="{{image.image.url}}"
+                    class="img-responsive" alt="Image" style="height:300px; width:400px;"></a>
+            </a><br><br>
         </div>
 
-        
+        <!-- Modal -->
+        <div id="{{image.id}}" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">{{image.image_name}}</h4>
+                        <img class="img" style="height: 300px; width: 400px;" src="{{image.image.url}}"
+                            alt="{{image.image_name}}">
+                    </div>
+                    <div class="modal-body">
+                        <p>{{image.image_description}}</p>
+                        <p>Location : {{image.image_location}}</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 {%endfor %}
-    </div>
-    </div>
+</div>
+</div>
 {%endblock%}

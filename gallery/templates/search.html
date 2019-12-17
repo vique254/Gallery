@@ -16,11 +16,11 @@
             <h1>{{category.image_name}}</h1>
         </div>
         <div>
-            <img src="{{category.image.url}}" alt="image">
+            <img src="{{category.image.url}}" style="height: 300px; width: 400px;" alt="image">
         </div>
         <div>
                 <h1>{{category.image_description}}</h1>
-                <h1>{{category.image_location}}</h1>
+                <h1> Location : {{category.image_location}}</h1>
         </div>
         {% endfor %}
         {% endif %}
