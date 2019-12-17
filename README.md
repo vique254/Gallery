@@ -14,7 +14,7 @@ my personal gallery which displays images for people to see/view
 * Open the project with a text editor eg visual studio (code .) or atom (atom .)
 
 ## Live link
-https://gall1.herokuapp.com
+https://gall1.herokuapp.com/
 
 ## Technologies used
 * Python
