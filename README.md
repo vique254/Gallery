@@ -38,4 +38,4 @@ https://gall1.herokuapp.com/
 ###  copyright
 copyright &copy; 2019  **Vique**
 ### License
-You can check License[License Here](LICENSE)
+You can check License [License Here](LICENSE)
